@@ -1,0 +1,146 @@
+:root {
+  --color-green: hsl(75, 94%, 57%);
+  --color-white: hsl(0, 0%, 100%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.75rem, 0.706rem + 0.188vi, 0.875rem);
+  color: var(--color-white);
+  background-color: var(--grey-900);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-inline: 24px;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 25px;
+  max-width: 385px;
+  width: 100%;
+  padding: 40px;
+  background-color: var(--grey-800);
+  border-radius: 20px;
+}
+
+.social-card__wrapper-image {
+  max-width: 88px;
+  max-height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.social-card__avatar {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.social-card__info {
+  text-align: center;
+}
+
+.social-card__name {
+  font-size: clamp(1.75rem, 1.662rem + 0.376vi, 2rem);
+  font-weight: 600;
+}
+
+.social-card__location {
+  font-size: clamp(1rem, 0.956rem + 0.188vi, 1.125rem);
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-green);
+}
+
+.social-card__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  width: 100%;
+}
+
+.social-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  font-weight: 700;
+  background-color: var(--grey-700);
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+
+.social-card__link:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+  transition-duration: 0s;
+}
+
+@media (hover: hover) {
+  .social-card__link:hover {
+    background-color: var(--color-green);
+    color: var(--grey-900);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-card {
+    row-gap: 40px;
+    padding: 24px;
+  }
+
+  .social-card__list {
+    row-gap: 11px;
+  }
+}
